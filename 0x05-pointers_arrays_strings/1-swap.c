@@ -4,8 +4,6 @@
 /**
  * swap_int - swaps the value of two integers
  *
- * @n: stores value
- *
  * @a: value to swap
  *
  * @b: value to swap
