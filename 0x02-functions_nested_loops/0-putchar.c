@@ -1,25 +1,19 @@
 #include "main.h"
-
 /**
+ * main - enter the code
  *
- * main - Starting point
- *
- * Return: Always 0 (Success)
+ * Return: Always 0
  */
 
-
 int main(void)
-
 {
+	int i;
+	char ch[] = "_putchar";
 
-int i;
-char p[] = "_putchar";
-
-for (i = 0; i < 9; i++)
-{
-	_putchar(p[i]);
-}
-_putchar('\n');
-
-return (0);
+	for (i = 0; i < 8; i++)
+		{
+		_putchar(ch[i]);
+		}
+		_putchar('\n');
+	return (0);
 }
