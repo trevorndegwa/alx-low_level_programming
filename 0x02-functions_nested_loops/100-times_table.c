@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_times_tables - print the n times tables
+ * print_times_table - print the n times tables
  *
  * @n: number times tables (0 < n <= 15)
  *
@@ -9,38 +9,50 @@
  */
 void print_times_table(int n)
 {
-	int a, b, op;
+	int i, j;
 
-	if (n >= 0 && n <= 15)
+	if (n > 0 && n < 15)
 	{
-		for (a = 0; a <= n; a++)
+		for (i = 0; i <= n; i++)
 		{
-			_putchar(48);
-			for (b = 1; b <= n; b++)
-			{
-				op = a * b;
-				_putchar(44);
-				_putchar(32);
-				if (op <= 9)
-				{
-					_putchar(32);
-					_putchar(32);
-					_putchar(op + 48);
-				}
-				else if (op <= 9)
-				{
-					_putchar(32);
-					_putchar((op / 10) + 48);
-					_putchar((op % 10) + 48);
-				}
-				else
-				{
-				_putchar(((op / 100) % 10) + 48);
-				_putchar(((op / 10) % 10) + 48);
-				_putchar((op % 10) + 48);
-				}
-			}
+			_putchar('0');
+			for (j = 1; j <= n; j++)
+				putformat(i * j);
 			_putchar('\n');
 		}
+	}
+}
+
+/**
+ * putformat - formatted character output
+ * @n: number to format
+ * Return: nothing
+ */
+void putformat(int n)
+{
+	if (n <= 9)
+	{
+		_putchar(',');
+		_putchar(' ');
+		_putchar(' ');
+		_putchar(' ');
+		_putchar(n + '0');
+	}
+	else if (n > 9 && n <= 99)
+	{
+		_putchar(',');
+		_putchar(' ');
+		_putchar(' ');
+		_putchar(n / 10 + '0');
+		_putchar(n % 10 + '0');
+	}
+	else
+	{
+		_putchar(',');
+		_putchar(' ');
+		_putchar(' ');
+		_putchar(n / 100 + '0');
+		_putchar(n / 10 % 10 + '0');
+		_putchar(n % 10 + '0');
 	}
 }
