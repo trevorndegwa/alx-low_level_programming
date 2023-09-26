@@ -10,20 +10,21 @@
 
 void print_diagsums(int *a, int size)
 {
-	int i;
-	int tl = 0;
-	int tr = 0;
-	int s = size * size;
+	int index, sum11 = 0, sum21 = 0;
 
-	for (i = 0; i < s; i += size + 1)
+	for (index = 0; index < size; index++)
 	{
-		tl += a[i];
+		sum11 += a[index];
+		a += size;
 	}
 
-	for (i = size - 1; i < s - 1; i += size - 1)
+	a -= size;
+
+	for (index = 0; index < size; index++)
 	{
-		tr += a[i];
+		sum21 += a[index];
+		a -= size;
 	}
 
-	printf("%d, %d\n", tl, tr);
+	printf("%d, %d\n", sum11, sum21);
 }
