@@ -11,13 +11,19 @@
 
 void print_diagsums(int *a, int size)
 {
-	int i = 0, j = 0, sum_11 = 0, sum_22 = 0;
+	int priC, sum1, sum2, diagC1, diagC2, row;
 
-	for (; i < size * size; i += size)
+	priC = 0, sum1 = 0, sum2 = 0, diagC1 = 0, diagC2 = 0, row = 0;
+	while (priC < size * size)
 	{
-		sum_11 += a[i + j];
-		sum_22 += a[i + (size - 1) - j];
-		j++;
+		if (priC == diagC1 + (row * size))
+			sum1 += a[primC];
+		if (priC == (size - diagC2 - 1) + (row * size))
+			sum2 += a[priC];
+		if (((priC + 1) % size) == 0)
+			row++, diagC1++, diagC2++;
+		priC++;
 	}
-	printf("%d, %d\n", sum_11, sum_22);
+	printf("%d, ", sum1);
+	printf("%d\n", sum2);
 }
