@@ -13,12 +13,13 @@ void set_string(char **s, char *to)
 {
 	if (*s != NULL)
 	{
-		free(*s);
-	}
+		size_t to_len = strlen(to);
 
-	*s = (char *)malloc(strlen(to) + 1;
-			if (*s != NULL)
-			{
-				strcpy(*s, to);
-			}
+		strncpy(*s, to, to_len);
+		(*s)[to_len] = '\0';
+	}
+	else
+	{
+	/*branch not necessary*/
+	}
 }
