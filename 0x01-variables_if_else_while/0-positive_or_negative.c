@@ -2,9 +2,11 @@
 #include <stdlib.h>
 #include <time.h>
 /**
- * testing n is +/ve or -/ve
- * @n: no. to b printed
- * return: return 0
+ * main - check the code
+ *
+ * @n: digit to b printed
+ *
+ * Return: Always 0
  */
 
 int main(void)
