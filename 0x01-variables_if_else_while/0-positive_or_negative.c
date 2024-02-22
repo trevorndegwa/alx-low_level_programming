@@ -4,8 +4,6 @@
 /**
  * main - check the code
  *
- * @n: digit to b printed
- *
  * Return: Always 0
  */
 
