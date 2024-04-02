@@ -8,24 +8,16 @@
 
 int main(void)
 {
-	unsigned long int sum, sum3, sum5, i;
+	unsigned long int sum = 0;
+	unsigned long int i;
 
-	sum = 0;
-	sum3 = 0;
-	sum5 = 0;
-
-	for (i = 0; i < 1024; ++i)
+	for (i = 0; i < 1024; i++)
 	{
-		if ((i % 3) == 0)
+		if ((i % 3) == 0 || (i % 5) == 0)
 		{
-			sum3 = sum3 + i;
-		}
-		if ((i % 5) == 0)
-		{
-			sum5 = sum5 + i;
+			sum = sum + i;
 		}
 	}
-	sum = sum3 + sum5;
 	printf("%lu\n", sum);
 	return (0);
 }
