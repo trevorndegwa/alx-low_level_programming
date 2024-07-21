@@ -8,12 +8,32 @@
 
 int is_palindrome(char *s)
 {
-	int len = _strlen_recursion(s);
+	int len = find_strlen(s);
 
 	if (len == 0)
 		return (1);
 
 	return (is_palindrome_helper(s, 0, len - 1));
+}
+
+/**
+ * find_strlen - returns string length
+ * @s: string to measure
+ *
+ * Return: string length
+ */
+
+int find_strlen(char *s)
+{
+	int len = 0;
+
+	if (*(s + len))
+	{
+		len++;
+		len += find_strlen(s + len);
+	}
+
+	return (len);
 }
 
 /**
