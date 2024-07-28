@@ -10,7 +10,7 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *concat_str;
-	unsigned int len, len1 = 0, len2 = 0, concat_index = 0, i;
+	unsigned int len, len1 = 0, len2 = 0, i, j;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -26,10 +26,10 @@ char *str_concat(char *s1, char *s2)
 	if (concat_str == NULL)
 		return (NULL);
 	for (i = 0; i < len1; i++)
-		concat_str[concat_str++] = s1[i];
-	for (i = 0; i < len2; i++)
-		concat_str[concat_str++] = s2[i];
-	concat_str[concat_index] = '\0';
+		concat_str[i] = s1[i];
+	for (j = 0; j < len2; j++)
+		concat_str[i + j] = s2[j];
+	concat_str[i + j] = '\0';
 
 	return (concat_str);
 }
