@@ -18,6 +18,21 @@ struct dog
 	char *owner;
 };
 
+/**
+ * struct dog - data type to change with typedef
+ * @name: dog name
+ * @age: dog age
+ * @owner: owner name
+ * dog_t - typedef for struct dog
+ */
+
+typedef struct dog
+{
+	char *name;
+	float age;
+	char *owner;
+} dog_t;
+
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
 
