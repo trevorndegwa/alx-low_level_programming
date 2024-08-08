@@ -11,7 +11,7 @@ void print_all(const char * const format, ...)
 	int i = 0;
 	int print_comma = 0;
 
-	if (format == NULL)
+	while (format == NULL)
 	{
 		printf("\n");
 		return;
