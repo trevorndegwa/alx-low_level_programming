@@ -2,15 +2,12 @@
 
 /**
  * _abs - computes absolute value of an int
- * @int: parameter to be checked
+ * @i: parameter to be checked
  *
  * Return: absolute value of int
  */
-int _abs(int)
+int _abs(int i)
 {
-	int i;
-
-	i = int;
 	if (i >= 0)
 	{
 		return (i);
