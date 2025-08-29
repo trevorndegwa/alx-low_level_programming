@@ -28,7 +28,7 @@ int main(void)
 	b_low = b % 1000000000;
 
 	/* cont from 93rd to 98th*/
-	for (i = 93, i <= 98, i++)
+	for (i = 93; i <= 98; i++)
 	{
 		carry = (a_low + b_low) / 1000000000;
 		low = (a_low + b_low) % 1000000000;
