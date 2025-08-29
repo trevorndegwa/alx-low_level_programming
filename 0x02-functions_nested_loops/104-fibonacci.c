@@ -6,40 +6,35 @@
  */
 int main(void)
 {
-	unsigned long a = 1, b = 2;
-	unsigned long a_high, b_high, a_low, b_low;
+	unsigned long a_low = 1, b_low = 2;
+	unsigned long a_high = 0, b_high = 0;
 	unsigned long carry, high, low;
-	int i;
+	int count;
+	const unsigned long BASE = 1000000000UL;
 
 	/* print first 2 numbers*/
-	printf("%lu, %lu", a, b);
+	printf("1, 2");
 
-	/* generate next up to 92nd safely in unsigned long*/
-	for (i = 3; i <= 92; i++)
+	for (count = 3; count <= 98; count++)
 	{
-		b = b + a;
-		a = b - a;
-		printf(", %lu", b);
-	}
-	/* split the last a and bs into high and low parts*/
-	a_high = a / 1000000000;
-	a_low = a % 1000000000;
-	b_high = b / 1000000000;
-	b_low = b % 1000000000;
+		/* add the low parts */
+		low = a_low + b_low;
+		carry = low / BASE;
+		low = low % BASE;
 
-	/* cont from 93rd to 98th*/
-	for (i = 93; i <= 98; i++)
-	{
-		carry = (a_low + b_low) / 1000000000;
-		low = (a_low + b_low) % 1000000000;
+		/* add the high parts + carry */
 		high = a_high + b_high + carry;
 
-		printf(", %lu%09lu", high, low);
+		if (high > 0)
+			printf(", %lu%09lu", high, low);
+		else
+			printf(", %lu", low);
 
+		/* move to next */
 		a_high = b_high;
 		a_low = b_low;
 		b_high = high;
-		a_low = low;
+		b_low = low;
 	}
 	printf("\n");
 	return (0);
