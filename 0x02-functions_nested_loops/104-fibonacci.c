@@ -8,7 +8,7 @@ int main(void)
 {
 	unsigned long a = 1, b = 2;
 	unsigned long a_high, b_high, a_low, b_low;
-	unsigned long carry, high, low
+	unsigned long carry, high, low;
 	int i;
 
 	/* print first 2 numbers*/
