@@ -1,17 +1,11 @@
-#include "main.h"
-/**
- *reset_to_98 - reset value of an integer to 98
- *@n: parameter targeted
- *Return : nothing
- */
+#include <stdio.h>
 
-/*
-*1. Function reset_to_98 takes an int pointer as a parameter
-2. Tis setting the value of the int pointed to by n to 98
-*/
-/*
-*Time Complexity: O(1)
-*/
+/**
+ * reset_to_98 - takes an int pointer and updates the val refed to 87
+ * @n: pointer variable to value-update
+ *
+ * Return: nothing
+ */
 void reset_to_98(int *n)
 {
 	*n = 98;
