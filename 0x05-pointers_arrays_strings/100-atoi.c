@@ -7,38 +7,21 @@
  *
  * Return: integer value
  */
+
 int _atoi(char *s)
 {
-	int sign = 1;
-	int result = 0;
-	int found_digit = 0;
-	int digit;
+	int i = 1;
 
-	while (*s != '\0')
-	{
-		if (*s >= '0' && *s <= '9')
-		{
-			digit = *s - '0';
-			found_digit = 1;
+	unsigned int num = 0;
 
-			if (sign == 1 && (result > (INT_MAX - digit) / 10))
-				return (INT_MAX);
-			if (sign == -1 && (result < -(INT_MIN + digit) / 10))
-				return (INT_MIN);
-		}
-		else if (found_digit)
-		{
+	do {
+		if (*s == '-')
+			i *= -1;
+		else if (*s >= '0' && *s <= '9')
+			num = num * 10 + (*s - '0');
+		else if (num > 0)
 			break;
-		}
-		else if (*s == '-')
-		{
-			sign = -sign;
-		}
-		else if (*s == '+')
-		{
-			;
-		}
-		s++;
-	}
-	return (sign * result);
+	} while (*s++);
+
+	return (num * i);
 }
