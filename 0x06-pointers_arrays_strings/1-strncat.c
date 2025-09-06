@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * strncat - concatenates n src bytes
+ * _strncat - concatenates n src bytes
  * @dest: destination buffer
  * @src: source buffer
  * @n: bytes at most from n to use
@@ -14,7 +14,7 @@ char *_strncat(char *dest, char *src, int n)
 
 	i = 0;
 	ld = 0;
-	
+
 	while (dest[i])
 	{
 		i++;
