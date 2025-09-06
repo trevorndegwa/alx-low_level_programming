@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strncpy - copies a string, including the terminating null byte, using at most n bytes
+ * _strncpy - copies a string, including the terminating null byte
  * @dest: destination buffer storing copied string
  * @src: source string
  * @n: max integer of src buffer to print
