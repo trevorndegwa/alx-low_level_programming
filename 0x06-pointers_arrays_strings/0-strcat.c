@@ -1,31 +1,41 @@
 #include "main.h"
 
 /**
-* _strcat - concatenates the string pointed to
-*@dest: String that will append
-*@src: string that will be concatenated upon
-*
-* Return: returns pointer to @dest
-*/
-
-/*
-*1. We declare a function called _strcat that takes two arguments: dest and src
-2.  Declare two variables: index and dest_len
-3.  Use a while loop to iterate through the dest string and find its length
-4.  Use a for loop to iterate through the src string
-5.  Finall return the dest string
-*/
-/*
-*Time Complexity: O(n)
-*/
+ * _strcat - concatenate 2 strings
+ * @dest: 1st string
+ * @src: appending string
+ *
+ * Return: pointer to dest
+ */
 char *_strcat(char *dest, char *src)
 {
-	int index = 0, dest_len = 0;
+	int ld, ls, j;
 
-	while (dest[index++])
-		dest_len++;
-	for (index = 0; src[index]; index++)
-		dest[dest_len++] = src[index];
-
+	j = 0;
+	ld = _strlen(dest);
+	ls = _stlen(src);
+	for (i = ld; i <= ls + ld - 1; i++)
+	{
+		dest[ld] = src[j];
+		j++;
+	}
 	return (dest);
+}
+
+/**
+ * _strlen - gives lengths of string
+ * @s: pointer to string
+ *
+ * Return: length of string
+ */
+int _strlen(char *s)
+{
+	int len = 0;
+
+	while (*s != '\0')
+	{
+		s++;
+		len = len + 1;
+	}
+	return (len);
 }
