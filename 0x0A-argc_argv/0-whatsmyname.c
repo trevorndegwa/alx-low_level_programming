@@ -1,16 +1,15 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
- * main - print program name then new line
+ * main - entry point of program
+ * @argc: no. of arguments
+ * @argv: array of pointers
  *
- * @argc: number of arguments passed
- * @argv: array of arguments
- * Return: Always 0
+ * Return: EXIT_SUCCESS 4 success, EXIT_FAILURE 4 failure
  */
-
-int main(int argc, char *argv[])
+int main(int argc __attribute__((unused)), char *argv[])
 {
-	if (argc > 0)
-		printf("%s\n", argv[0]);
-	return (0);
+	printf("%s\n", argv[0]);
+	exit(EXIT_SUCCESS);
 }
