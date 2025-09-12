@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
+
 
 /**
  * argstostr - concatenates all program arguments
@@ -19,7 +19,7 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 
 	for (i = 0; i < ac; i++)
-		total_len += strlen(av[i]) + 1;
+		total_len += _strlen(av[i]) + 1;
 
 	ptr = malloc((total_len + 1) * sizeof(char));
 	if (ptr == NULL)
@@ -34,4 +34,22 @@ char *argstostr(int ac, char **av)
 	}
 	ptr[k] = '\0';
 	return (ptr);
+}
+
+/**
+ * _strlen - gives lengths of string
+ * @s: pointer to string
+ *
+ * Return: length of string
+ */
+int _strlen(char *s)
+{
+	int len = 0;
+
+	while (*s != '\0')
+	{
+		s++;
+		len = len + 1;
+	}
+	return (len);
 }
