@@ -22,8 +22,14 @@ Key concepts covered:
 - **1-print_binary.c**  
   Prints the binary representation of a number without using arrays, malloc, or `%` or `/`.
 
+- **2-get_bit.c**  
+  Returns the value of a bit at a given index.
+
 - **3-set_bit.c**  
   Sets the value of a bit to `1` at a given index.
+
+- **4-clear_bit.c** 
+  Sets the value of a bit to '0' at a given index.
 
 - **5-flip_bits.c**  
   Returns the number of bits you would need to flip to get from one number to another.
@@ -34,7 +40,7 @@ Key concepts covered:
 - **_putchar.c**  
   Helper function for printing characters.
 
-- **0-main.c**, **1-main.c**, **3-main.c**, **5-main.c**, **a**, **b**, **d**, **f**  
+- **0-main.c**, **1-main.c**, **2-main.c**, **3-main.c**, **4-main.c**, **5-main.c**, **a**, **b**, **d**, **f**  
   Test files and examples used to verify functionality.
 
 ---
